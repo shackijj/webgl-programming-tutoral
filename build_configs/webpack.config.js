@@ -24,6 +24,6 @@ module.exports = {
             bundle: 'HelloCanvas',
             filename: 'ch1/HelloCanvas.html',
             template: 'src/template.html',
-          }),
+        }),
     ]
-}
+};
