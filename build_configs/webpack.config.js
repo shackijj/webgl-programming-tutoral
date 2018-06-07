@@ -4,12 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        'ch1': './src/ch1/index.js',
-        'ch2': './src/ch2/index.js',
+        'HelloCanvas': './src/ch1/HelloCanvas.js',
     },
     output: {
         path: path.resolve(__dirname, '../public/'),
-        filename: 'js/[name].bundle.js'
+        filename: 'js/[name].bundle.js',
+        library: 'main'
     },
     devServer: {
         contentBase: path.join(__dirname, '../public'),
@@ -20,17 +20,10 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             inject: false,
-            chunks: ['ch1'],
-            bundle: 'ch1',
-            filename: 'ch1/index.html',
+            chunks: ['HelloCanvas'],
+            bundle: 'HelloCanvas',
+            filename: 'ch1/HelloCanvas.html',
             template: 'src/template.html',
           }),
-          new HtmlWebpackPlugin({
-            inject: false,
-            chunks: ['ch2'],
-            bundle: 'ch2',
-            filename: 'ch2/index.html',
-            template: 'src/template.html'
-          })
     ]
 }
