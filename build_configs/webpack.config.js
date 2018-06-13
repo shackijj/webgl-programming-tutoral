@@ -6,7 +6,7 @@ module.exports = {
     entry: {
         'HelloCanvas': './src/ch1/HelloCanvas.js',
         'HelloPoint1': './src/ch1/HelloPoint1/HelloPoint1.js',
-        'HelloPoint2': './src/ch1/HelloPoint1/HelloPoint2.js',
+        'HelloPoint2': './src/ch1/HelloPoint2/HelloPoint2.js',
     },
     output: {
         path: path.resolve(__dirname, '../public/'),
