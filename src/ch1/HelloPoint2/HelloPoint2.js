@@ -17,6 +17,15 @@ function main() {
         throw new Error('Failed to initialize shaders.');
     }
 
+    const a_Position = gl.getAttribLocation(gl.program, 'a_Position');
+    const a_PointSize = gl.getAttribLocation(gl.program, 'a_PointSize');
+
+    if (a_Position < 0) {
+        throw new Error('Failed to get the storage location of a_Position');
+    }
+
+    gl.vertexAttrib3f(a_Position, 0.0, 0.0, 0.0);
+    gl.vertexAttrib1f(a_PointSize, 5.0);
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
 
     gl.clear(gl.COLOR_BUFFER_BIT);
