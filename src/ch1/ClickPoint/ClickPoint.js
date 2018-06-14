@@ -24,13 +24,27 @@ function main() {
         throw new Error('Failed to get the storage location of a_Position');
     }
 
-    gl.vertexAttrib3f(a_Position, 0.0, 0.0, 0.0);
     gl.vertexAttrib1f(a_PointSize, 5.0);
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
-
     gl.clear(gl.COLOR_BUFFER_BIT);
+    const points = [];
 
-    gl.drawArrays(gl.POINTS, 0, 1);
+    function onCanvasClick(e) {
+        gl.clear(gl.COLOR_BUFFER_BIT);
+        const center = [canvas.width / 2, canvas.height / 2];
+        const webglCoord = [
+            (e.offsetX - center[0]) / center[0],
+            (center[1] - e.offsetY) / center[1]
+        ];
+        points.push(webglCoord);
+
+        points.forEach((point) => {
+            gl.vertexAttrib3f(a_Position, point[0], point[1], 0.0);
+            gl.drawArrays(gl.POINTS, 0, 1);
+        });
+    }
+    
+    canvas.addEventListener('click', onCanvasClick);
 }
 
 module.exports = main;
