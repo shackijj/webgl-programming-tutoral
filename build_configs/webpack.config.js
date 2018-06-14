@@ -7,6 +7,7 @@ module.exports = {
         'HelloCanvas': './src/ch1/HelloCanvas.js',
         'HelloPoint1': './src/ch1/HelloPoint1/HelloPoint1.js',
         'HelloPoint2': './src/ch1/HelloPoint2/HelloPoint2.js',
+        'ClickPoint': './src/ch1/ClickPoint/ClickPoint.js',
     },
     output: {
         path: path.resolve(__dirname, '../public/'),
@@ -47,6 +48,13 @@ module.exports = {
             chunks: ['HelloPoint2'],
             bundle: 'HelloPoint2',
             filename: 'ch1/HelloPoint2.html',
+            template: 'src/template.html',
+        }),
+        new HtmlWebpackPlugin({
+            inject: false,
+            chunks: ['ClickPoint'],
+            bundle: 'ClickPoint',
+            filename: 'ch1/ClickPoint.html',
             template: 'src/template.html',
         }),
     ]
