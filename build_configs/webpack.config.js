@@ -10,6 +10,10 @@ module.exports = {
         'ClickPoint': './src/ch2/ClickPoint/ClickPoint.js',
         'ColoredPoints': './src/ch2/ColoredPoints/ColoredPoints.js',
         'MultiPoints': './src/ch3/MultiPoints/MultiPoints.js',
+        'HelloTriangle': './src/ch3/HelloTriangle/HelloTriangle.js',
+        'HelloRectangle': './src/ch3/HelloRectangle/HelloRectangle.js',
+        'TranslatedTriangle': './src/ch3/TranslatedTriangle/TranslatedTriangle.js',
+        'RotatedTriangle': './src/ch3/RotatedTriangle/RotatedTriangle.js'
     },
     output: {
         path: path.resolve(__dirname, '../public/'),
@@ -71,6 +75,27 @@ module.exports = {
             chunks: ['MultiPoints'],
             bundle: 'MultiPoints',
             filename: 'ch2/MultiPoints.html',
+            template: 'src/template.html',
+        }),
+        new HtmlWebpackPlugin({
+            inject: false,
+            chunks: ['HelloTriangle'],
+            bundle: 'HelloTriangle',
+            filename: 'ch2/HelloTriangle.html',
+            template: 'src/template.html',
+        }),
+        new HtmlWebpackPlugin({
+            inject: false,
+            chunks: ['TranslatedTriangle'],
+            bundle: 'TranslatedTriangle',
+            filename: 'ch2/TranslatedTriangle.html',
+            template: 'src/template.html',
+        }),
+        new HtmlWebpackPlugin({
+            inject: false,
+            chunks: ['RotatedTriangle'],
+            bundle: 'RotatedTriangle',
+            filename: 'ch2/RotatedTriangle.html',
             template: 'src/template.html',
         }),
     ]
