@@ -15,6 +15,8 @@ module.exports = {
         'TranslatedTriangle': './src/ch3/TranslatedTriangle/TranslatedTriangle.js',
         'RotatedTriangle': './src/ch3/RotatedTriangle/RotatedTriangle.js',
         'RotatedTriangleMatrix': './src/ch3/RotatedTriangleMatrix/RotatedTriangleMatrix.js',
+        'RotatedTriangle_Matrix4': './src/ch4/RotatedTriangle_Matrix4/RotatedTriangle_Matrix4.js',
+        'RotatedTranslatedTriangle': './src/ch4/RotatedTranslatedTriangle/RotatedTranslatedTriangle.js',
     },
     output: {
         path: path.resolve(__dirname, '../public/'),
@@ -104,6 +106,20 @@ module.exports = {
             chunks: ['RotatedTriangleMatrix'],
             bundle: 'RotatedTriangleMatrix',
             filename: 'ch3/RotatedTriangleMatrix.html',
+            template: 'src/template.html',
+        }),
+        new HtmlWebpackPlugin({
+            inject: false,
+            chunks: ['RotatedTriangle_Matrix4'],
+            bundle: 'RotatedTriangle_Matrix4',
+            filename: 'ch4/RotatedTriangle_Matrix4.html',
+            template: 'src/template.html',
+        }),
+        new HtmlWebpackPlugin({
+            inject: false,
+            chunks: ['RotatedTranslatedTriangle'],
+            bundle: 'RotatedTranslatedTriangle',
+            filename: 'ch4/RotatedTranslatedTriangle.html',
             template: 'src/template.html',
         }),
     ]
